@@ -20,7 +20,7 @@ public class FileReader {
         try(FileInputStream stream = new FileInputStream(file)) {
             Path path = FileSystems.getDefault().getPath(file.getPath());
             fileData = Files.readString(path);
-        } catch (IOException e) {
+        } catch (IOException | NullPointerException e) {
             e.printStackTrace();
         }
 
